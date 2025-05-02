@@ -39,7 +39,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
 // --- RUTAS USER ---
 Route::group(['prefix' => 'user', 'middleware' => ['auth']], function () {
 
-    Route::get('dashboard', 'UserController@dashboard')->name('user.dashboard');
+    Route::get('dashboard', 'UserController@index')->name('user.dashboard');
     // Route::get('dashboard', 'User\\DashboardController@index')->name('user.dashboard');
     // Route::get('wikis', 'WikiController@userIndex')->name('user.wikis.index');
     // Route::get('wikis/{uuid}', 'WikiController@show')->name('user.wikis.show');

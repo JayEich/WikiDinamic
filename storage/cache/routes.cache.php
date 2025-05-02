@@ -66,7 +66,7 @@
       array (
         'uri' => 'user/dashboard',
         'controller' => 'UserController',
-        'action' => 'dashboard',
+        'action' => 'index',
         'name' => 'user.dashboard',
         'middleware' => 
         array (
@@ -148,5 +148,5 @@
     'user.dashboard' => 'user/dashboard',
     'home' => '',
   ),
-  'timestamp' => 1746207129,
+  'timestamp' => 1746215289,
 );

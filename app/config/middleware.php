@@ -7,7 +7,7 @@ MiddlewareKernel::register('auth', function () {
     Security::startSecureSession(); 
     if (empty($_SESSION['usuario'])) {
         if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-             http_response_code(401); // Unauthorized
+             http_response_code(401);
              echo json_encode(['error' => 'No autenticado']);
              exit;
         } else {
@@ -20,13 +20,12 @@ MiddlewareKernel::register('auth', function () {
 MiddlewareKernel::register('guest', function () {
     Security::startSecureSession();
     if (!empty($_SESSION['usuario'])) {
-        // Determina el dashboard basado en rol
          $role = $_SESSION['role'] ?? null;
          $dashboardRoute = match ($role) {
              'admin' => route('admin.dashboard'),
              'user' => route('user.dashboard'),
              'superadmin' => route('superadmin.dashboard'),
-             default => route('login'),
+             default => route('dashboard.admin'),
          };
         header("Location: $dashboardRoute");
         exit;

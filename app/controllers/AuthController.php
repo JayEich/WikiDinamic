@@ -53,6 +53,7 @@ class AuthController {
         }
 
         require __DIR__ . '/../views/auth/login.php';
+       
     }
 
     public function logout() {

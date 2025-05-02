@@ -3,7 +3,7 @@ namespace App\Controllers\User;
 
 use App\Helpers\Security;
 
-class DashboardController {
+class UserController {
     public function index() {
         Security::logError("Accediendo a User Dashboard.");
         $username = $_SESSION['usuario'] ?? 'Usuario';

@@ -1,19 +1,22 @@
-# Bloquear acceso al archivos
-<FilesMatch "^\.">
-    Order allow,deny
-    Deny from all
-</FilesMatch>
-
-
-# Activar mod_rewrite
+# Activar el módulo de reescritura
 RewriteEngine On
 
-# Asegúrate de que el RewriteBase esté bien si usas subcarpeta
-RewriteBase /wikiconceptMVC/public/
-
-# Excluir archivos y carpetas reales (como CSS, JS, imágenes)
+# Si la solicitud no es a un archivo existente
 RewriteCond %{REQUEST_FILENAME} !-f
+# Si la solicitud no es a un directorio existente
 RewriteCond %{REQUEST_FILENAME} !-d
 
-# Redirigir todo lo demás a index.php
-RewriteRule ^ index.php [QSA,L]
+# Reescribir todas las solicitudes a index.php
+# La regla captura toda la URL después del dominio como parámetro
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+
+# Proteger el archivo .htaccess
+<Files .htaccess>
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Configuración para ocultar la extensión .php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/]+)/?$ $1.php [L]

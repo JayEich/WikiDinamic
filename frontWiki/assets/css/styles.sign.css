@@ -1,0 +1,150 @@
+@font-face {
+    font-family: "OpenSans";
+    src: url("@assets/fonts/OpenSans-Italic.woff") format("woff");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "OpenSans", sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.login-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-image: url('../img/wikilogo.jpg'); */
+    background-image:
+        linear-gradient(rgba(3, 3, 57, 0.6), rgba(51, 48, 48, 0.4)),
+        url('../img/cardGeneric.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container-form {
+    width: 90%;
+    height: 90vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: all .5s ease-out;
+}
+
+.formulario {
+    width: 390px;
+    padding: 0;
+    margin: 0;
+    border-radius: 5%;
+    background-color: rgba(255, 255, 255, 0.788);
+    text-align: center;
+    border: 3px solid #030339;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.formulario:hover {
+    transform: translateY(-5px);
+}
+
+.create-account {
+    padding: 2.7rem 0 1rem 0;
+    font-size: 1.7rem;
+}
+
+.wikilogo {
+    width: 330px;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.input-group .input-group-text {
+    border: none;
+    background: transparent;
+    font-size: 1.2rem;
+    padding-right: 0.5rem;
+    color: #030339;
+}
+
+.input-group input {
+    border: none;
+    border-bottom: 1px solid #333030;
+    background-color: transparent;
+    color: #030339;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: .2rem 0;
+    width: 70%;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-bottom: 2px solid #030339;
+}
+
+input::placeholder {
+    color: #333030;
+    opacity: 1;
+}
+
+.formulario input[type="submit"] {
+    width: 60%;
+    border: solid thin #333030;
+    padding: 0.7rem;
+    border-radius: 2rem;
+    background-color: #333030;
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: white;
+    margin-top: 2rem;
+}
+
+.formulario input[type="submit"]:hover {
+    background-color: #030339;
+    border: solid thin #fff;
+    color: white;
+}
+
+.toggle-wrapper {
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+}
+
+.toggle-password {
+    background: transparent;
+    border: none;
+    font-size: 0.9rem;
+    color: #5f5d5d;
+    cursor: pointer;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.btn {
+    margin-bottom: 10%;
+}
+
+#capsLockIndicator {
+    display: none;
+    font-size: 0.8rem;
+    color: #333030;
+    width: 75%;
+    margin: 0 auto;
+}

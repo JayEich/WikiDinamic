@@ -1,0 +1,289 @@
+@font-face {
+    font-family: "OpenSans";
+    src: url("../Fonts/OpenSans-Italic.otf"),
+         url("../Fonts/OpenSans-Italic.woff") format("woff"),
+         url("../Fonts/OpenSans-Italic.ttf") format("truetype"),
+         url("../Fonts/OpenSans-Italic.svg") format("svg");
+  }s
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "OpenSans", sans-serif;
+    }
+    
+#articleMenu {
+    padding: 15px;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    height: 100%;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.7); 
+    position: fixed;
+    width: 20%;
+    z-index: 100;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+#articleMenu h5 {
+    color: #030339;
+    font-size: 1.4rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+
+#articleMenu.hidden-aside {
+    transform: translateX(-100%);
+}
+
+#articleContent {
+    transition: margin 0.3s ease, width 0.3s ease;
+    margin-left: 20%;
+    margin-right: 18%; 
+    width: 60%; 
+    display: flex;
+    flex-direction: column;
+    
+}
+
+/* Ajuste del contenido expandido */
+.content-expanded {
+    margin-left: 2% !important; 
+    width: 75% !important; 
+}
+
+/* Boton Aside */
+.toggle-aside-button {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    background-color: rgba(3, 3, 57, 0.6); 
+    color: white;
+    border: none;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    width: 30px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 999;
+    transition: all 0.3s ease;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+.toggle-aside-button:hover {
+    background-color: rgb(4, 4, 86);
+    width: 40px; 
+    box-shadow: 3px 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.toggle-aside-button.menu-visible {
+    left: calc(20% - 15px);
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+
+/* Estilos para centrar y dar formato al título, descripción e imagen de la wiki */
+.wiki-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.wiki-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #030339;
+    margin-bottom: 10px;
+}
+
+.wiki-description {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de la imagen de la wiki */
+.wiki-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Separador debajo del título, descripción e imagen */
+.wiki-separator {
+    border: none;
+    height: 2px;
+    background: #0a0a0a;
+    margin: 20px auto;
+    width: 80%;
+}
+
+
+
+/* Artículos */
+.article-container {
+    margin-bottom: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #eaeaea;
+}
+
+.article-link {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+    flex-grow: 1;
+}
+
+.article-link:hover, .article-link.active {
+    background-color: #f0f0f0;
+    color: #030339;
+    text-decoration: none;
+}
+
+.article-link.active {
+    font-weight: bold;
+    border-left: 3px solid #030339;
+}
+
+/* Botón para expandir/contraer subtemas */
+.toggle-subtopics {
+    background: transparent;
+    border: none;
+    color: #777;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.toggle-subtopics:hover {
+    color: #030339;
+}
+
+.toggle-subtopics.expanded i {
+    transform: rotate(90deg);
+}
+
+/* Contenedor de subtemas */
+.subtopics-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: rgba(248, 249, 250, 0.9); 
+}
+
+.subtopics-container.expanded {
+    max-height: 1000px;
+    transition: max-height 0.5s ease-in;
+}
+
+/* Lista de subtemas */
+.subtopics-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.subtopics-list li {
+    padding: 0;
+    margin: 0;
+}
+
+.subtopic-link {
+    display: block;
+    padding: 8px 8px 8px 25px;
+    color: #555;
+    text-decoration: none;
+    font-size: 0.9em;
+    border-top: 1px solid #eee;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.subtopic-link:hover {
+    background-color: #e9ecef;
+    color: #030339;
+    text-decoration: none;
+}
+
+.subtopic-link.active {
+    background-color: #e0e0e0;
+    color: #030339;
+    font-weight: bold;
+}
+
+#SearchNdata {
+    width: 10%; 
+    min-width: 300px;
+    max-width: 300px;
+    text-align: center; 
+    font-size: 0.9rem;
+    position: absolute;
+    right: 10px; 
+}
+
+
+/* Animación para el spinner de carga */
+.loading-spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #030339;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Estilo para el highlight de subtemas */
+@keyframes highlight {
+    0% { background-color: #ffff9c; }
+    100% { background-color: transparent; }
+}
+
+.highlight-subtopic {
+    animation: highlight 2s ease-out;
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+    #articleMenu {
+        width: 80%;
+    }
+    
+    #articleContent {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+    
+    .content-expanded {
+        width: 100% !important;
+    }
+    
+    .toggle-aside-button.menu-visible {
+        left: calc(80% - 20px);
+    }
+}

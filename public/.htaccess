@@ -1,0 +1,19 @@
+# Bloquear acceso al archivos
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+
+# Activar mod_rewrite
+RewriteEngine On
+
+# Asegúrate de que el RewriteBase esté bien si usas subcarpeta
+RewriteBase /wikiconceptMVC/public/
+
+# Excluir archivos y carpetas reales (como CSS, JS, imágenes)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirigir todo lo demás a index.php
+RewriteRule ^ index.php [QSA,L]

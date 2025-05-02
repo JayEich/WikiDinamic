@@ -1,0 +1,73 @@
+.mce-content-body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333; /* Color del texto */
+    background: #f9f9f9; /* Fondo del área de escritura */
+    padding: 15px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+
+.tox .tox-toolbar {
+    background: #2c3e50;
+    border-radius: 8px 8px 0 0; 
+}
+
+.tox .tox-toolbar button {
+    color: #fff; 
+}
+
+.tox .tox-toolbar button:hover {
+    background: #34495e; 
+}
+ 
+.tox .tox-editor-container {
+    border: 2px solid #ccc; 
+    border-radius: 0 0 8px 8px; 
+}
+
+.tox .tox-editor-container iframe {
+    background: #ffffff; 
+}
+
+.tox .tox-button {
+    border-radius: 4px;
+}
+
+
+/* Ajusta la tarjeta de previsualización */
+.card {
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar azul con título centrado */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo dentro del navbar */
+.navbar img {
+    border: 2px solid white;
+    margin-right: 10px;
+}
+
+/* Ajuste para centrar los artículos */
+#articlesContainer {
+    width: 100%;
+    max-width: 800px;
+}
+
+/* Formularios a la izquierda y previsualización a la derecha */
+@media (max-width: 768px) {
+    .col-md-8, .col-md-4 {
+        width: 100%;
+        text-align: center;
+    }
+
+    #articlesContainer {
+        max-width: 100%;
+    }
+}

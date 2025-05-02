@@ -1,0 +1,36 @@
+frontWiki/node_modules/
+# Node.js / npm
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+
+# Vite
+dist/
+.vite/
+.cache/
+
+# Optional: archivos de testing de Vite
+coverage/
+
+# Vendor (por ejemplo, Composer en PHP)
+vendor/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Configs temporales de editores
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Logs y bases de datos temporales
+*.log
+*.sqlite
+*.sqlite3
+.env
+.env.*.local

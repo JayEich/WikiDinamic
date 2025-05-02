@@ -1,0 +1,301 @@
+@font-face {
+  font-family: "OpenSans";
+  src: url("../Fonts/OpenSans-Italic.otf"),
+       url("../Fonts/OpenSans-Italic.woff") format("woff"),
+       url("../Fonts/OpenSans-Italic.ttf") format("truetype"),
+       url("../Fonts/OpenSans-Italic.svg") format("svg");
+}s
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "OpenSans", sans-serif;
+  }
+
+  .login-init, h1, h2, p, a {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .login-init::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/fondo_wiki2.jpg') no-repeat center center/cover;
+    opacity: 0.1; 
+    z-index: -1; 
+  }
+
+  /* NAV */
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #030339; 
+    color: #fff;
+    padding: 10px 20px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  nav .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  nav .logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  nav .title {
+    flex: 1;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 4%;
+  }
+  
+  nav .user-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  nav .user-info span {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  nav .user-info img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  /* Tarjetas (Wikis) */
+  .wiki-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .wiki-image {
+    background-color: #fff;
+    max-width: 450px;
+    max-height: 300px;
+    /* width: 100%; */
+    margin: 15px;
+    box-shadow: 0 5px 8px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    border: 1px solid #555;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s;
+    opacity: 0;
+    animation: fadeInAnimation 2s forwards;
+    animation-delay: calc(0.5s * var(--order));
+  }
+  
+  .wiki-card {
+    background-color: #fff;
+    width: 300px;
+    margin: 15px;
+    box-shadow: 0 5px 8px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    border: 1px solid #555;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s;
+    opacity: 0;
+    animation: fadeInAnimation 2s forwards;
+    animation-delay: calc(0.5s * var(--order));
+  }
+
+  /* Admin Panel */
+  .wiki-card i {
+    font-size: 100px;
+    color: #030339; 
+    margin-top: 20px;
+    margin-bottom: 5px; 
+    display: block; 
+    text-align: center; 
+  }
+/* Estilos del botón flotante de administración */
+.admin-menu {
+  position: fixed;
+  top: 17%; /* Centrado verticalmente */
+  right: 0;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.8); /* Fondo oscuro con opacidad */
+  padding: 10px;
+  border-radius: 10px 0 0 10px;
+  transition: width 0.3s ease-in-out, background 0.3s;
+  width: 50px;
+  overflow: hidden;
+  z-index: 9999; /* Asegura que esté sobre todo el contenido */
+}
+
+.admin-menu:hover {
+  width: 180px;
+  background: rgba(0, 0, 0, 0.9); /* Más oscuro al expandirse */
+}
+
+.admin-menu i {
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-menu:hover i {
+  transform: rotate(90deg);
+}
+
+/* Contenedor de las opciones oculto por defecto */
+.admin-options {
+  display: none;
+  margin-top: 10px;
+}
+
+.admin-options a {
+  display: block;
+  padding: 8px;
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.admin-options a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+/* Mostrar opciones al pasar el mouse */
+.admin-menu:hover .admin-options {
+  display: block;
+}
+
+  .admin-options a {
+      display: block;
+      text-decoration: none;
+      color: white;
+      padding: 5px 10px;
+      transition: background 0.2s;
+  }
+
+  .admin-options a:hover {
+      background: rgba(255, 255, 255, 0.2);
+  }
+   /* Fin Admin Panel */
+  
+  @keyframes fadeInAnimation {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .wiki-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .wiki-card img {
+    max-width: 300px;
+    max-height: 280px;
+    width: 100%;
+    height:auto;
+    object-fit: cover;
+  }
+  
+  .wiki-card .card-content {
+    padding: 15px;
+  }
+  
+  .wiki-card h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #555; 
+  }
+  
+  .wiki-card p {
+    margin-bottom: 8px;
+    color: #555;
+  }
+  
+  /* Botón de Logout/atras */
+  #btnCerrarSesion, #btnAtras {
+    background-color: #555; 
+    border-radius: 10px;
+    border: none;
+    margin-right: 20px;
+    color: #fff; 
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center; 
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  #btnCerrarSesion:hover , #btnAtras:hover {
+    background-color: #040456;
+    transform: translateY(-3px);
+  }
+  
+  #btnCerrarSesion i, #btnAtras i {
+    margin-right: 10px; 
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1.6px;
+    background-color: #030339; 
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+
+
+.sticky-save-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.050);
+  padding: 10px;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.sticky-save-container button {
+  pointer-events: auto;
+}
+
+#btnGuardarWiki{
+  background-color: #030339;
+  color: white;
+}
+
+#addArticle{
+  background-color: #030339;
+  color: white;
+}

@@ -1,0 +1,18 @@
+[2025-05-02 23:28:22] sesionToken:ad966e212e83707226064385dbf683e8a1ab0d548e3732e733b660c722f5866d
+[2025-05-02 23:28:28] Usuario autenticado: admin1 con rol admin
+[2025-05-02 23:29:12] Accediendo a Admin Dashboard.
+[2025-05-02 23:29:22] Accediendo a Admin Dashboard.
+[2025-05-02 23:29:41] Accediendo a Admin Dashboard.
+[2025-05-02 23:30:49] Accediendo a Admin Dashboard.
+[2025-05-02 23:30:58] Accediendo a Admin Dashboard.
+[2025-05-09 12:40:19] sesionToken:e2bb5741a234469d07e7e64ef7e5058c14bfac10c3a2a47c8611dc1b9c82a992
+[2025-05-09 15:36:37] sesionToken:cc065371ff9d087f7f88f95d658cae9e10aa21bb7de248da3108b52c9c410427
+[2025-05-09 15:38:18] sesionToken:cc065371ff9d087f7f88f95d658cae9e10aa21bb7de248da3108b52c9c410427
+[2025-05-09 15:38:26] Usuario autenticado: admin1 con rol admin
+[2025-05-09 15:38:26] Accediendo a Admin Dashboard.
+[2025-05-09 16:00:45] sesionToken:310fe2b42879ff7634e33173e749268b125e8873a7c6933feed0df694abb727a
+[2025-05-09 16:00:52] Usuario autenticado: admin1 con rol admin
+[2025-05-09 16:00:52] Accediendo a Admin Dashboard.
+[2025-05-09 18:31:15] sesionToken:652c3d24b51fad8ac3d84ba14ee8f9c989cd55618132186362b166d140aac096
+[2025-05-09 18:33:46] Usuario autenticado: admin1 con rol admin
+[2025-05-09 18:33:46] Accediendo a Admin Dashboard.

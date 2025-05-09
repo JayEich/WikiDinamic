@@ -22,16 +22,17 @@ Route::group(['prefix' => 'superadmin', 'middleware' => ['auth', 'superadmin']],
 
 
 // --- RUTAS ADMIN ---
+
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
-
-
-    Route::get('dashboard', 'AdminController@dashboard')->name('admin.dashboard');
-    // Route::get('wikis', 'WikiController@index')->name('admin.wikis.index');
-    // Route::get('wikis/create', 'WikiController@create')->name('admin.wikis.create');
-    // Route::post('wikis', 'WikiController@store')->name('admin.wikis.store');
-    // Route::get('wikis/{uuid}/edit', 'WikiController@edit')->name('admin.wikis.edit');
-    // Route::put('wikis/{uuid}', 'WikiController@update')->name('admin.wikis.update');
-    // Route::delete('wikis/{uuid}', 'WikiController@destroy')->name('admin.wikis.destroy');
+    
+    Route::get('dashboard', 'Admin\\AdminController@dashboard')->name('admin.dashboard');
+    Route::get('wikis/create', 'App\Controllers\Admin\WikiController@create')->name('admin.wikis.create'); 
+    Route::post('wikis', 'App\Controllers\Admin\WikiController@store')->name('admin.wikis.store');
+    Route::get('wikis', 'App\Controllers\Admin\WikiController@index')->name('admin.wikis.index');
+    Route::get('wikis/{uuid}/edit', 'App\Controllers\Admin\WikiController@edit')->name('admin.wikis.edit');
+    Route::post('wikis/{uuid}', 'App\Controllers\Admin\WikiController@update')->name('admin.wikis.update');
+    Route::post('wikis/{uuid}/delete', 'App\Controllers\Admin\WikiController@delete')->name('admin.wikis.delete');
+    Route::post('wikis/{uuid}/restore', 'App\Controllers\Admin\WikiController@restore')->name('admin.wikis.restore');
 
 });
 

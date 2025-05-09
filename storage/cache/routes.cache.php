@@ -50,7 +50,7 @@
       '#^admin/dashboard$#' => 
       array (
         'uri' => 'admin/dashboard',
-        'controller' => 'AdminController',
+        'controller' => 'Admin\\AdminController',
         'action' => 'dashboard',
         'name' => 'admin.dashboard',
         'middleware' => 
@@ -60,6 +60,52 @@
         ),
         'params' => 
         array (
+        ),
+      ),
+      '#^admin/wikis/create$#' => 
+      array (
+        'uri' => 'admin/wikis/create',
+        'controller' => 'App\\Controllers\\Admin\\WikiController',
+        'action' => 'create',
+        'name' => 'admin.wikis.create',
+        'middleware' => 
+        array (
+          0 => 'auth',
+          1 => 'admin',
+        ),
+        'params' => 
+        array (
+        ),
+      ),
+      '#^admin/wikis$#' => 
+      array (
+        'uri' => 'admin/wikis',
+        'controller' => 'App\\Controllers\\Admin\\WikiController',
+        'action' => 'index',
+        'name' => 'admin.wikis.index',
+        'middleware' => 
+        array (
+          0 => 'auth',
+          1 => 'admin',
+        ),
+        'params' => 
+        array (
+        ),
+      ),
+      '#^admin/wikis/([^/]+)/edit$#' => 
+      array (
+        'uri' => 'admin/wikis/{uuid}/edit',
+        'controller' => 'App\\Controllers\\Admin\\WikiController',
+        'action' => 'edit',
+        'name' => 'admin.wikis.edit',
+        'middleware' => 
+        array (
+          0 => 'auth',
+          1 => 'admin',
+        ),
+        'params' => 
+        array (
+          0 => 'uuid',
         ),
       ),
       '#^user/dashboard$#' => 
@@ -135,6 +181,69 @@
         array (
         ),
       ),
+      '#^admin/wikis$#' => 
+      array (
+        'uri' => 'admin/wikis',
+        'controller' => 'App\\Controllers\\Admin\\WikiController',
+        'action' => 'store',
+        'name' => 'admin.wikis.store',
+        'middleware' => 
+        array (
+          0 => 'auth',
+          1 => 'admin',
+        ),
+        'params' => 
+        array (
+        ),
+      ),
+      '#^admin/wikis/([^/]+)$#' => 
+      array (
+        'uri' => 'admin/wikis/{uuid}',
+        'controller' => 'App\\Controllers\\Admin\\WikiController',
+        'action' => 'update',
+        'name' => 'admin.wikis.update',
+        'middleware' => 
+        array (
+          0 => 'auth',
+          1 => 'admin',
+        ),
+        'params' => 
+        array (
+          0 => 'uuid',
+        ),
+      ),
+      '#^admin/wikis/([^/]+)/delete$#' => 
+      array (
+        'uri' => 'admin/wikis/{uuid}/delete',
+        'controller' => 'App\\Controllers\\Admin\\WikiController',
+        'action' => 'delete',
+        'name' => 'admin.wikis.delete',
+        'middleware' => 
+        array (
+          0 => 'auth',
+          1 => 'admin',
+        ),
+        'params' => 
+        array (
+          0 => 'uuid',
+        ),
+      ),
+      '#^admin/wikis/([^/]+)/restore$#' => 
+      array (
+        'uri' => 'admin/wikis/{uuid}/restore',
+        'controller' => 'App\\Controllers\\Admin\\WikiController',
+        'action' => 'restore',
+        'name' => 'admin.wikis.restore',
+        'middleware' => 
+        array (
+          0 => 'auth',
+          1 => 'admin',
+        ),
+        'params' => 
+        array (
+          0 => 'uuid',
+        ),
+      ),
     ),
   ),
   'named' => 
@@ -145,8 +254,15 @@
     'superadmin.client.edit' => 'superadmin/client/edit',
     'superadmin.client.update' => 'superadmin/client/update',
     'admin.dashboard' => 'admin/dashboard',
+    'admin.wikis.create' => 'admin/wikis/create',
+    'admin.wikis.store' => 'admin/wikis',
+    'admin.wikis.index' => 'admin/wikis',
+    'admin.wikis.edit' => 'admin/wikis/{uuid}/edit',
+    'admin.wikis.update' => 'admin/wikis/{uuid}',
+    'admin.wikis.delete' => 'admin/wikis/{uuid}/delete',
+    'admin.wikis.restore' => 'admin/wikis/{uuid}/restore',
     'user.dashboard' => 'user/dashboard',
     'home' => '',
   ),
-  'timestamp' => 1746215289,
+  'timestamp' => 1746808075,
 );
